@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_logo"
+        app:tint="@color/primary"
+        android:background="@drawable/circle_light_bg"
+        android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/tvDialogFarmName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Farm Name"
+        android:textColor="@color/primary_dark"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/tvDialogFarmerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Farmer Name"
+        android:textColor="@color/text_hint"
+        android:textSize="14sp"
+        android:gravity="center" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="24dp"
+        android:background="#EEEEEE" />
+
+    <TextView
+        android:id="@+id/tvDialogPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="0789 374 423"
+        android:textColor="@color/primary_dark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:drawableStart="@drawable/ic_phone"
+        android:drawablePadding="12dp"
+        app:drawableTint="@color/primary" />
+
+    <TextView
+        android:id="@+id/tvDialogJoined"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Joined in 2024"
+        android:textColor="@color/text_hint"
+        android:textSize="12sp"
+        android:gravity="center" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDialogCall"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="32dp"
+        android:text="Call Farmer"
+        app:cornerRadius="16dp"
+        android:backgroundTint="@color/primary" />
+
+</LinearLayout>

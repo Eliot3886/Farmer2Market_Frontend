@@ -1,0 +1,45 @@
+databases:
+  - name: farmer2market-db
+    databaseName: farmer2market
+    user: farmer2market_user
+    plan: free
+
+services:
+  - type: redis
+    name: farmer2market-redis
+    plan: free
+    maxmemoryPolicy: noeviction
+
+  - type: web
+    name: farmer2market-backend
+    env: python
+    rootDir: backend/farmer2market
+    buildCommand: "bash build.sh"
+    startCommand: "daphne farmer2market.asgi:application --port $PORT --bind 0.0.0.0"
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: farmer2market-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: farmer2market-redis
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: "*" # Update this once you know your frontend domains and actual render URL
+      - key: CORS_ALLOWED_ORIGINS
+        value: "http://localhost:3000,http://127.0.0.1:3000" # Add your actual frontend URL here
+      - key: PYTHON_VERSION
+        value: "3.10.0" # Make sure to specify the Python version you used locally
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false # Requires manual entry in Render Dashboard
+      - key: CLOUDINARY_API_KEY
+        sync: false # Requires manual entry in Render Dashboard
+      - key: CLOUDINARY_API_SECRET
+        sync: false # Requires manual entry in Render Dashboard
