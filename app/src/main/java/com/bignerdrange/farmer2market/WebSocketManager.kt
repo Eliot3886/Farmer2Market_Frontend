@@ -14,7 +14,7 @@ class WebSocketManager(
 
     fun connect() {
         // Replace with your local IP and ensure /ws/chat/ prefix
-        val wsUrl = "${RetrofitClient.BASE_URL.replace("http://", "ws://")}ws/chat/$roomName/"
+        val wsUrl = "${RetrofitClient.BASE_URL.replace("http://", "ws://").replace("https://", "wss://")}ws/chat/$roomName/"
         val request = Request.Builder().url(wsUrl).build()
         
         webSocket = client.newWebSocket(request, object : WebSocketListener() {

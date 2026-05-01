@@ -13,7 +13,7 @@ object RetrofitClient {
      * - If using Real Device: Use your computer's local IP (e.g., "http://192.168.1.5:8000/")
      *   Make sure both devices are on the SAME Wi-Fi network.
      */
-    const val BASE_URL = "http://192.168.100.17:8000/"
+    const val BASE_URL = "https://farmer2market-78uo.onrender.com/"
 
     private var authToken: String? = null
 
