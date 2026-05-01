@@ -2,6 +2,7 @@
 *.iml
 .gradle
 /.idea/
+
 /build
 /captures
 .externalNativeBuild
@@ -18,3 +19,7 @@ db.sqlite3
 media/
 staticfiles/
 .DS_Store
+# Some uneccessary files
+backend/
+frontend/
+
