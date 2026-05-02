@@ -93,27 +93,44 @@ com.bignerdrange.farmer2market
 
 ```
 app/
+Farmer2Market/
 │
-├── java/com/bignerdrange/farmer2market/
-│   ├── activities/
-│   │   ├── LoginActivity.kt
-│   │   ├── RegisterActivity.kt
-│   │   ├── MarketplaceActivity.kt
-│   │   ├── ChatActivity.kt
-│   │   └── UploadProductActivity.kt
+├── app/
+│   ├── src/
+│   │   ├── androidTest/
+│   │   │   └── java/com/bignerdrange/farmer2market/
+│   │   │
+│   │   ├── main/
+│   │   │   ├── java/com/bignerdrange/farmer2market/
+│   │   │   │   ├── activities/        # App screens (UI logic)
+│   │   │   │   ├── adapters/          # RecyclerView adapters
+│   │   │   │   ├── models/            # Data models
+│   │   │   │   ├── network/           # API calls (Retrofit / JWT handling)
+│   │   │   │   ├── repository/        # Data management layer
+│   │   │   │   ├── utils/             # Helper classes
+│   │   │   │   └── viewmodels/        # UI-related data logic (MVVM)
+│   │   │   │
+│   │   │   ├── res/
+│   │   │   │   ├── layout/            # XML UI layouts
+│   │   │   │   ├── drawable/          # Images & icons
+│   │   │   │   ├── values/            # Colors, strings, styles
+│   │   │   │   └── mipmap/            # App launcher icons
+│   │   │   │
+│   │   │   └── AndroidManifest.xml    # App configuration
+│   │   │
+│   │   ├── test/
+│   │   │   └── java/com/bignerdrange/farmer2market/
 │   │
-│   ├── adapters/
-│   ├── models/
-│   ├── network/
-│   │   ├── WebSocketManager.kt
-│   │   └── ApiClient.kt
+│   ├── build.gradle.kts              # App-level dependencies
+│   ├── proguard-rules.pro            # Code obfuscation rules
+│   └── .gitignore
 │
-├── res/
-│   ├── layout/
-│   ├── drawable/
-│   └── values/
-│
-└── AndroidManifest.xml
+├── gradle/                           # Gradle wrapper files
+├── build.gradle.kts                  # Project-level configuration
+├── gradle.properties
+├── settings.gradle.kts
+├── .gitignore
+└── README.md
 ```
 
 ---
